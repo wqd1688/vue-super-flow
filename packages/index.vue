@@ -308,6 +308,9 @@ export default {
         evt.preventDefault()
       }
 
+      if (this.moveNodeConf.isMove || this.moveAllConf.isMove) {
+        this.$emit('moveDone', this.graph)
+      }
       this.moveNodeConf.isMove = false
       this.moveNodeConf.node = null
       this.moveNodeConf.offset = null
